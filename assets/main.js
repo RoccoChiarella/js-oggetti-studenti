@@ -5,7 +5,23 @@ $(document).ready(function() {
         'Età' : 20
     };
 
-    for (var chiave in studente) {
-        $('.studenti').append('<p>'+chiave+': '+studente[chiave]+'</p>');
+    var studenti = [
+        studente,
+        {
+            'Nome' : 'Mario',
+            'Cognome' : 'Rossi',
+            'Età' : 25
+        },
+        {
+            'Nome' : 'Giuseppe',
+            'Cognome' : 'Verdi',
+            'Età' : 18
+        }
+    ];
+
+    for (var i = 0; i < studenti.length; i++) {
+        for (var chiave in studenti[i]) {
+            $('.studenti').append('<p>'+chiave+': '+studenti[i][chiave]+'</p>');
+        }
     }
 });
